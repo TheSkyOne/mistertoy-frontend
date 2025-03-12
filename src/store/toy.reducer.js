@@ -14,7 +14,7 @@ const initialState = {
 export function toyReducer(state = initialState, cmd) {
     switch (cmd.type) {
         case SET_TOYS:
-            return { ...state, toys: cmd.toys}
+            return { ...state, toys: cmd.toys }
 
         case ADD_TOY:
             return { ...state, toys: [...state.toys, cmd.newToy] }
@@ -24,7 +24,7 @@ export function toyReducer(state = initialState, cmd) {
 
         case UPDATE_TOY:
             return { ...state, toys: state.toys.map(toy => toy._id === cmd.updatedToy._id ? cmd.updatedToy : toy) }
-        
+
         case SET_IS_LOADING:
             return { ...state, isLoading: cmd.isLoading }
 
