@@ -1,12 +1,12 @@
 import { toyService } from "../services/toy.service.js"
 import { SET_TOYS, UPDATE_TOY, ADD_TOY, REMOVE_TOY, SET_IS_LOADING } from "./toy.reducer.js"
-import { store } from "./store.js"
+import store from "./store.js"
 
 
 export function loadToys(filter = {}) {
     store.dispatch({ type: SET_IS_LOADING, isLoading: true })
     toyService.query(filter)
-        .then(toyList => store.dispatch({ type: SET_TOYS, toyList }))
+        .then(toys => store.dispatch({ type: SET_TOYS, toys }))
         .catch(err => {
             console.log("failed to load toys", err)
             throw err
