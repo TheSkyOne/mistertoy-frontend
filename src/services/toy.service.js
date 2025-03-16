@@ -20,6 +20,11 @@ function query(filter = {}) {
     return storageService.query(TOY_KEY)
         .then(toys => {
             if (filter.price) toys = toys.filter(toy => toy.price <= filter.price)
+            if (filter.name) {
+                const regExp = new RegExp(filter.name, 'i')
+                toys = toys.filter(toy => regExp.test(toy.name))
+            }
+            if (filter.inStock !== undefined) toys = toys.filter(toy => { return toy.inStock === filter.inStock })
 
             return toys
         })
@@ -57,7 +62,9 @@ function getEmptyToy(name) {
 
 export function getDefaultFilter() {
     return {
-        price: 0
+        name: "",
+        price: 0,
+        inStock: undefined
     }
 }
 

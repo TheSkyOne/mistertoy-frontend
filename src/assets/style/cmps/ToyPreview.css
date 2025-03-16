@@ -9,6 +9,11 @@
 }
 
 
-.toy-list h4 {
-    margin: .8em 0 .8em;
+.toy-preview h4 {
+    margin: .4em 0 0;
+}
+
+
+.toy-preview > :last-child {
+    margin: 0 0 .4em;
 }

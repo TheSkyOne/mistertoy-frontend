@@ -4,7 +4,11 @@ export function ToyPreview({ toy }) {
         <article className="toy-preview">
             <h2>{toy.name}</h2>
             <img src={toy.imgUrl || null} alt="Toy Image"></img>
-            <h4>price: {toy.price}</h4>
+            <div>
+                <h4>Price: {toy.price}</h4>
+                <h4>In stock: {toy.inStock ? "✅" : "❌"}</h4>
+            </div>
+
         </article>
     )
 }

@@ -1,4 +1,7 @@
 .toy-filter {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 0.5em;
     margin-block-end: 2vw;
     padding: 1vw;
     background-color: aliceblue;
