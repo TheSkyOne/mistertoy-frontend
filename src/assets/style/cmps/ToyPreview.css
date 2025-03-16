@@ -1,11 +1,6 @@
-.toy-preview {
-    display: grid;
-    grid-template-rows: auto;
-    align-content: space-between;
-    text-align: center;
-    background-color: aliceblue;
-    border: 4px;
-    aspect-ratio: 1/1;
+.toy-preview div{
+    display: flex;
+    justify-content: space-evenly;
 }
 
 

@@ -3,6 +3,7 @@ import { Routes, Route, HashRouter } from "react-router-dom"
 
 import store from "../store/store.js"
 import { ToyIndex } from "../pages/ToyIndex.jsx"
+import { ToyDetails } from "../pages/ToyDetails.jsx"
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
                 <main>
                     <Routes>
                         <Route path="/" element={<ToyIndex />} />
-                        <Route path="toys" element={<ToyIndex />} />
+                        <Route path="/toys" element={<ToyIndex />} />
+                        <Route path="/toys/:toyId" element={<ToyDetails />} />
                     </Routes>
                 </main>
             </HashRouter>

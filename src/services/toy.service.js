@@ -49,9 +49,9 @@ function save(toy) {
 
 function getEmptyToy(name) {
     return {
-        _id: '',
+        _id: "",
         name,
-        imgUrl: '',
+        imgUrl: "imgs/gdicon.svg",
         price: 0,
         labels: [],
         createdAt: 0,

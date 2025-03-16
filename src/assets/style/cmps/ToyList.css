@@ -5,3 +5,18 @@
     list-style: none;
     padding: 0;
 }
+
+.toy-list li {
+    display: grid;
+    grid-template-rows: auto;
+    align-content: space-between;
+    text-align: center;
+    background-color: palegreen;
+    border: 4px;
+    aspect-ratio: 1/1;
+}
+
+.toy-list li > button {
+    justify-self: center;
+    margin-block-end: 1em;
+}
