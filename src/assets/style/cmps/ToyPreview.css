@@ -1,3 +1,7 @@
+.toy-preview {
+    position: relative;
+}
+
 .toy-preview div{
     display: flex;
     justify-content: space-evenly;
@@ -11,4 +15,14 @@
 
 .toy-preview > :last-child {
     margin: 0 0 .4em;
+}
+
+.edit-toy-button {
+    padding: 0 3px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 1.2em;
+    color: tomato;
 }

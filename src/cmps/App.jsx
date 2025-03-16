@@ -15,6 +15,7 @@ function App() {
                         <Route path="/" element={<ToyIndex />} />
                         <Route path="/toys" element={<ToyIndex />} />
                         <Route path="/toys/:toyId" element={<ToyDetails />} />
+                        <Route path="/toys/edit/:toyId" element={<ToyDetails />} />
                     </Routes>
                 </main>
             </HashRouter>

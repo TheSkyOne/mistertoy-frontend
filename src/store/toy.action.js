@@ -1,5 +1,5 @@
 import { toyService } from "../services/toy.service.js"
-import { SET_TOYS, UPDATE_TOY, ADD_TOY, REMOVE_TOY, SET_IS_LOADING } from "./toy.reducer.js"
+import { SET_TOYS, UPDATE_TOY, ADD_TOY, REMOVE_TOY, SET_IS_LOADING, SET_IS_EDITING } from "./toy.reducer.js"
 import store from "./store.js"
 
 
@@ -42,4 +42,8 @@ export function updateToy(updatedToy) {
             console.log("failed to update toy", err)
             throw err
         })
+}
+
+export function setIsEditingToy(isEditing) {
+    store.dispatch({ type: SET_IS_EDITING, isEditing })
 }

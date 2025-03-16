@@ -4,11 +4,13 @@ export const REMOVE_TOY = "REMOVE_TOY"
 export const UPDATE_TOY = "UPDATE_TOY"
 
 export const SET_IS_LOADING = "SET_IS_LOADING"
+export const SET_IS_EDITING = "SET_IS_EDITING"
 
 
 const initialState = {
     toys: [],
-    isLoading: false
+    isLoading: false,
+    isEditing: false
 }
 
 export function toyReducer(state = initialState, cmd) {
@@ -27,6 +29,9 @@ export function toyReducer(state = initialState, cmd) {
 
         case SET_IS_LOADING:
             return { ...state, isLoading: cmd.isLoading }
+
+        case SET_IS_EDITING:
+            return { ...state, isEditing: cmd.isEditing }
 
         default: return state
     }

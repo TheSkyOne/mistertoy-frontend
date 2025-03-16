@@ -33,3 +33,20 @@
     font-size: x-large;
     font-weight: 600;
 }
+
+.toy-details form {
+    display: grid;
+    grid-auto-columns: auto;
+    gap: 12px;
+    align-items: start;
+}
+
+.toy-details form > button {
+    margin-block-start: 1em;
+}
+
+.toy-details .nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}

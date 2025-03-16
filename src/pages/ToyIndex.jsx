@@ -11,7 +11,6 @@ export function ToyIndex() {
     const [filter, setFilter] = useState(getDefaultFilter())
 
     useEffect(() => {
-        console.log(filter)
         loadToys(filter)
     }, [filter])
 
