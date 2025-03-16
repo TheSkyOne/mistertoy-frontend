@@ -3,7 +3,7 @@ import { storageService } from './async-storage.service.js'
 
 const TOY_KEY = 'toysDB'
 const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle',
-                'Outdoor', 'Battery Powered']
+    'Outdoor', 'Battery Powered']
 
 _createToys()
 
@@ -16,8 +16,13 @@ export const toyService = {
 // For Debug (easy access from console):
 window.cs = toyService
 
-function query(filterBy = {}) {
+function query(filter = {}) {
     return storageService.query(TOY_KEY)
+        .then(toys => {
+            if (filter.price) toys = toys.filter(toy => toy.price <= filter.price)
+
+            return toys
+        })
 }
 
 function get(toyId) {
@@ -49,12 +54,20 @@ function getEmptyToy(name) {
     }
 }
 
+
+export function getDefaultFilter() {
+    return {
+        price: 0
+    }
+}
+
+
 function _createToys() {
     let toys = utilService.loadFromStorage(TOY_KEY)
     if (!toys || !toys.length) {
         toys = []
         for (let i = 0; i < 20; i++) {
-            const name = `Toy${i+1}`
+            const name = `Toy${i + 1}`
             const price = Math.floor(Math.random() * 1000)
             const toyLabels = labels.slice(0, Math.floor(Math.random() * labels.length))
             const inStock = Math.random() < 0.5 ? true : false

@@ -1,0 +1,9 @@
+.toy-filter {
+    margin-block-end: 2vw;
+    padding: 1vw;
+    background-color: aliceblue;
+}
+
+.toy-filter h2 {
+    margin-block-start: 0;
+}

@@ -1,0 +1,14 @@
+.toy-preview {
+    display: grid;
+    grid-template-rows: auto;
+    align-content: space-between;
+    text-align: center;
+    background-color: aliceblue;
+    border: 4px;
+    aspect-ratio: 1/1;
+}
+
+
+.toy-list h4 {
+    margin: .8em 0 .8em;
+}
